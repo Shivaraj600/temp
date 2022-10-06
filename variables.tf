@@ -55,13 +55,6 @@ variable "web_sg_cidr" {
 variable "web_sg_name" {
   default = "web_SG"
 }
-#DB_security group variables
-variable "DB_sg_cidr" {
-  default = ["10.0.0.0/16"]
-}
-variable "db_sg_name" {
-  default = "DB_SG"
-}
 
 #EC2 variables
 variable "instance_type" {
@@ -78,47 +71,4 @@ variable "ami" {
 
 variable "key_name" {
   default = "Terraform"
-}
-
-#RDS  variables
-variable "allocated_storage" {
-  default = "10"
-}
-
-variable "engine" {
-  default = "mysql"
-}
-
-variable "engine_version" {
-  default = "5.7.19"
-}
-
-variable "instance_class" {
-  default = "db.t2.micro"
-}
-
-variable "db_name" {
-  default = "mydb"
-}
-
-variable "user_name" {
-  default = "foo"
-}
-
-
-
-variable "publicly_accessible" {
-  default = "false"
-}
-
-variable "skip_final_snapshot" {
-  default = "true"
-}
-
-variable "major_engine_version" {
-  default = "5.7"
-}
-
-variable "family" {
-  default = "mysql5.7"
 }
