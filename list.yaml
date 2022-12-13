@@ -5,24 +5,17 @@ metadata:
 spec:
   generators:
   - list:
-      elements: 
-      - cluster: engineering-dev
-        url: https://34.68.28.6 # faux cluster URLs
+      elements:
       - cluster: engineering-prod
         url: https://kubernetes.default.svc
-
-  template: 
+  template:
     metadata:
       name: '{{cluster}}-guestbook'
     spec:
       project: default
       source:
         repoURL: https://github.com/Shivaraj600/argo-demo.git
-        targetRevision: HEAD
-        # 'cluster' name is also substituted here
         path: deploy/
       destination:
-        # The cluster 'url', used by Argo CD to access the cluster, is 
-        # substituted here.
         server: '{{url}}'
         namespace: guestbook
